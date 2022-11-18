@@ -19,6 +19,7 @@
       <label for="file" class="input-plus">+</label>
     </ul>
   </div>
+
 </template>
 
 <script>
