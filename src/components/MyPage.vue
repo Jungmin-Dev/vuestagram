@@ -33,6 +33,8 @@ export default {
     let store = useStore();
     console.log(store.state.name);
 
+
+
     onMounted(() => {
       axios.get('/follower.json').then((res) => {
         followers.value = res.data;
