@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .filter-item {
   width: 100px;
   height: 100px;

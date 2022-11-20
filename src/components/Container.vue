@@ -24,16 +24,20 @@
                   class="write-box">write!</textarea>
       </div>
     </div>
+
+    <div v-if="step===3">
+      <my-page :one="122"></my-page>
+    </div>
   </div>
 </template>
 
 <script>
 import Post from './Post'
 import FilterBox from "@/components/FilterBox";
-
+import MyPage from "@/components/MyPage";
 export default {
   name: "ContainerVue",
-  components: {Post, FilterBox},
+  components: {Post, FilterBox, MyPage},
 
   props: {
     Posting: Object,
@@ -52,7 +56,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .upload-image {
   width: 100%;
   height: 450px;

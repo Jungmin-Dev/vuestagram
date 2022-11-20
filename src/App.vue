@@ -10,6 +10,11 @@
     <img src="./assets/logo.png" class="logo"/>
   </div>
 
+<!--  <p>{{name}}</p>-->
+
+<!--  <p>{{$store.state.more}}</p>-->
+<!--  <button @click="$store.dispatch('getData')">더보기 버튼</button>-->
+
   <container :Posting="Posting" :step="step" @Post="stepChange" :url="url" @content="content_=$event" :filter="filter"/>
   <button @click="more"> 더보기</button>
 
@@ -27,6 +32,7 @@
 import Container from "@/components/Container";
 import data from "./store/data"
 import axios from 'axios'
+import {mapMutations, mapState} from "vuex";
 
 export default {
   mounted(){
@@ -38,15 +44,24 @@ export default {
   components: {Container},
   data() {
     return {
+      카운터: 0,
       Posting: data,
       count: 0,
-      step: 0,
+      step: 3,
       url: null,
       content_: null,
       filter: null
     }
   },
+  // return 존재 해야함
+  computed:{
+    ...mapState(['name', 'age', 'likes']),
+    ...mapState({ 내이름 : 'name'})
+  },
+
+
   methods: {
+    ...mapMutations(['setMore', '좋아요']),
     content(content) {
       this.content_ = content
     },
